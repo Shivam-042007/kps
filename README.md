@@ -22,7 +22,7 @@ A modern, responsive, and animated website for **Kerala Public School (KPS), Rai
 ## 📂 Project Structure
 
 ```bash
-KPS-Rairangpur/
+kps/
 │
 ├── index.html      # Main HTML structure
 ├── style.css       # Global styles, grid layouts, and animations
