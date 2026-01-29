@@ -42,10 +42,18 @@ img { max-width: 100%; display: block; }
     top: 0;
     z-index: 1000;
 }
-.logo { display: flex; align-items: center; gap: 12px; }
+/* Find the .logo section and add/update this: */
+
+.logo-img {
+    height: 50px;       /* Sets a fixed height to fit the navbar */
+    width: auto;        /* Keeps the aspect ratio correct */
+    object-fit: contain; /* Ensures the logo doesn't get stretched */
+    margin-right: 10px;  /* Adds space between the logo and the text */
+}
+/*.logo { display: flex; align-items: center; gap: 12px; }
 .logo-icon { font-size: 2rem; color: var(--primary-color); }
 .logo-text h1 { font-size: 1.2rem; color: var(--primary-color); font-weight: 700; line-height: 1; }
-.logo-text p { font-size: 0.8rem; color: #666; }
+.logo-text p { font-size: 0.8rem; color: #666; }*/
 
 .nav-links { display: flex; gap: 30px; }
 .nav-links a { font-weight: 500; font-size: 0.95rem; color: #444; }
