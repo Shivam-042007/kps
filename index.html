@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KPS Rairangpur - Kerala Public School</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:contact@kps.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
     <nav class="navbar">
         <div class="container flex-between">
             <div class="logo">
-                <i class="fas fa-graduation-cap" style="font-size: 2rem; color: #00897b;"></i>
+                <i class="fas fa-graduation-cap logo-icon"></i>
                 <div class="logo-text">
                     <h1>Kerala Public School</h1>
                     <p>Rairangpur</p>
@@ -37,12 +37,15 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact" class="btn-contact">Contact Us</a></li>
             </ul>
+            <div class="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
     <header id="hero">
         <div class="hero-overlay">
-            <div class="container hero-content">
+            <div class="container hero-content fade-on-scroll">
                 <span class="badge">Welcome to KPS Rairangpur</span>
                 <h1>Empowering Minds,<br>Building Character.</h1>
                 <p>Since 1996, we have been dedicated to providing value-based education under the Kerala Public School Trust.</p>
@@ -54,7 +57,7 @@
         </div>
     </header>
 
-    <section id="about" class="section">
+    <section id="about" class="section fade-on-scroll">
         <div class="container">
             <div class="section-header text-center">
                 <h2>About Our School</h2>
@@ -83,7 +86,7 @@
         </div>
     </section>
 
-    <section id="leadership" class="section bg-light">
+    <section id="leadership" class="section bg-light fade-on-scroll">
         <div class="container">
             <div class="section-header text-center">
                 <h2>Visionary Leadership</h2>
@@ -107,11 +110,19 @@
                     <span class="role">Vice Chairperson</span>
                     <p>Renowned for her academic direction and selfless service, she has been instrumental in shaping the academic philosophy of KPS.</p>
                 </div>
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <img src="https://ui-avatars.com/api/?name=The+Principal&background=00897b&color=fff&size=150" alt="The Principal">
+                    </div>
+                    <h3>The Principal</h3>
+                    <span class="role">Principal</span>
+                    <p>Leading our school with dedication, ensuring every student reaches their full potential through academic and moral excellence.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="news" class="section">
+    <section id="news" class="section fade-on-scroll">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -157,43 +168,27 @@
         </div>
     </section>
 
-    <section id="gallery" class="section bg-light">
+    <section id="gallery" class="section bg-light fade-on-scroll">
         <div class="container">
             <div class="section-header text-center">
                 <h2>More from K.P.S. RRP.</h2>
-                <div class="underline-gradient"></div> 
+                <div class="underline-gradient"></div>
             </div>
             
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Basketball Team">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Annual Function Dance">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Classroom Study">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Trophy Winner">
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1577896334614-5018a15ce200?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Science Exhibition">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="School Campus">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cultural Event">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="School Assembly">
+            <div class="gallery-viewport">
+                <div class="gallery-track">
+                    <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500" alt="Gallery 1"></div>
+                    <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500" alt="Gallery 2"></div>
+                    <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500" alt="Gallery 3"></div>
+                    <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?w=500" alt="Gallery 4"></div>
+                    <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1577896334614-5018a15ce200?w=500" alt="Gallery 5"></div>
+                    <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=500" alt="Gallery 6"></div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact" class="section bg-dark text-white">
+
+    <section id="contact" class="section bg-dark text-white fade-on-scroll">
         <div class="container contact-wrapper">
             <div class="section-header text-center">
                 <h2 style="color: #fff;">Contact Us</h2>
@@ -225,5 +220,6 @@
         <p>&copy; 2026 KPS Rairangpur. Built by Shivam.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
