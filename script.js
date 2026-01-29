@@ -1,7 +1,6 @@
-// 1. SCROLL ANIMATION OBSERVER
-// Detects when elements enter the screen and adds the 'visible' class
+// 1. SCROLL ANIMATION OBSERVER (Keeps your fade-in effect working)
 const observerOptions = {
-    threshold: 0.2 // Trigger when 20% of the element is visible
+    threshold: 0.2
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -12,36 +11,55 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Select all elements with the animation class
 document.querySelectorAll('.fade-on-scroll').forEach((el) => {
     observer.observe(el);
 });
 
 
-// 2. GALLERY AUTO-SCROLL
+// 2. FIXED GALLERY AUTO-SCROLL (Using Pixels for accuracy)
 const track = document.querySelector('.gallery-track');
-const slides = document.querySelectorAll('.gallery-slide');
-let currentIndex = 0;
-const totalSlides = slides.length;
 
-// Check if we are on mobile (1 photo) or desktop (2 photos)
-// Note: This check runs once on load. For dynamic resizing, you'd add an event listener.
-const photosPerView = window.innerWidth <= 768 ? 1 : 2; 
+// We use 'Array.from' to safely handle the slides list
+const slides = Array.from(track.children);
+let currentIndex = 0;
 
 function scrollGallery() {
+    // 1. Detect if we are on mobile or desktop
+    // Corresponds to your CSS media query
+    const isMobile = window.innerWidth <= 768;
+    const photosPerView = isMobile ? 1 : 2; 
+
+    // 2. Calculate how wide ONE slide is (including the gap)
+    // We get the width of the first slide + the gap (20px from CSS)
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    const gap = 20; // Must match the 'gap: 20px' in your CSS
+    const amountToMove = slideWidth + gap;
+
+    // 3. Update Index
     currentIndex += photosPerView;
-    
-    // If we reach the end, loop back to start
-    if (currentIndex >= totalSlides) {
+
+    // 4. Check if we reached the end
+    // If current index is greater than or equal to total slides, reset to 0
+    if (currentIndex >= slides.length) {
         currentIndex = 0;
+        // Optional: Remove transition for instant reset (prevents rewind effect)
+        // track.style.transition = 'none';
+        // track.style.transform = 'translateX(0)';
+        // setTimeout(() => track.style.transition = 'transform 0.8s ease-in-out', 50);
+        // return; 
     }
 
-    // Move the track
-    // If 2 photos: Each slide is 50%. We move by index * 50%
-    // If 1 photo: Each slide is 100%. We move by index * 100%
-    const movePercentage = currentIndex * (100 / photosPerView);
-    track.style.transform = `translateX(-${movePercentage}%)`;
+    // 5. Move the Track
+    // We move left by (amountToMove * currentIndex)
+    track.style.transform = `translateX(-${amountToMove * currentIndex}px)`;
 }
 
-// Set the auto-scroll timer (3000ms = 3 seconds)
+// Start the loop (3 seconds)
 setInterval(scrollGallery, 3000);
+
+// EXTRA: Update sizing if user resizes window (prevents breakage)
+window.addEventListener('resize', () => {
+    // Reset position on resize to avoid alignment bugs
+    currentIndex = 0;
+    track.style.transform = `translateX(0px)`;
+});
